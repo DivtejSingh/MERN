@@ -9,8 +9,8 @@ let userId = getLocalStorage("user")?._id;
 
 
 
-const socket = io(`http://localhost:3000/`, {
-//const socket = io(`https://api.avatarwalk.com/`, {
+const socket = io(`${import.meta.env.VITE_SOCKET_URL}`, {
+
   withCredentials: true,
   query: {user:userId},
   reconnectionAttempts: 5, 
